@@ -1,5 +1,3 @@
-#NODEBUG = 1
-
 !include <win32.mak>
 
 PROJ = WinContextMenu
@@ -60,14 +58,6 @@ $(OUTDIR)\CmdLineParser.obj: CmdLineParser.cpp
    /Fd$(OUTDIR)\\                                 \
    /I$(OUTDIR)                                    \
    CmdLineParser.cpp
-
-# Update the resources if necessary
-
-$(OUTDIR)\$(PROJ).res: $(PROJ).rc Resource.h
-    $(rc) $(rcflags) $(rcvars) /i $(OUTDIR) /fo $(OUTDIR)\$(PROJ).res  $(PROJ).rc
-
-# $(OUTDIR)\$(PROJ).res
-#   $(OUTDIR)\$(PROJ).res             \
 
 
 $(OUTDIR)\$(PROJ).exe: $(PROJ_OBJS) 
